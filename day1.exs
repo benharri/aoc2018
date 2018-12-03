@@ -1,8 +1,8 @@
 defmodule Day1 do
   @initial_state %{found: [], sum: 0}
 
-  def get_numlist do
-    File.stream!("day1.in")
+  def input() do
+    File.stream!("input/day1.in")
     |> Stream.map(&String.to_integer(String.trim(&1)))
   end
 
@@ -27,6 +27,6 @@ defmodule Day1 do
   end
 end
 
-numlist = Day1.get_numlist()
+numlist = Day1.input()
 IO.puts(Enum.sum(numlist))
 Day1.find_first_repeat(numlist)

@@ -1,11 +1,11 @@
 defmodule Day2 do
-  def get_lines() do
-    File.stream!("day2.in")
+  def input() do
+    File.stream!("input/day2.in")
     |> Stream.map(&String.trim/1)
   end
 
   def find_subcount(count) do
-    get_lines()
+    input()
     |> Enum.reduce(0, fn x, acc ->
       if x
          |> String.graphemes()
@@ -22,7 +22,7 @@ defmodule Day2 do
   end
 
   def find_common_chars() do
-    get_lines()
+    input()
     |> Enum.reduce(%MapSet{}, fn x, acc ->
       x
       |> String.graphemes()
